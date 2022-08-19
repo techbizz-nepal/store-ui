@@ -6,13 +6,14 @@ import HeaderSearchInput from "./HeaderSearchInput";
 function MainHeader(props) {
     return (
         <div
-            className={`containerDiv flex items-center py-1  `}>
-            <div className={`basis-1/4 flex items-center`}>
-                <Image src={`https://via.placeholder.com/300x50.png?text=Logo+Placeholder`}
-                       width={300}
-                       height={50}
+            className={`containerDiv flex items-center py-1  gap-x-2 sticky`}>
+            <div className={`basis-1/4 `}>
+                <Image src={`https://via.placeholder.com/200x20.png?text=Logo+Placeholder`}
+                       width={200}
+                       height={20}
                        alt={`logo`}
                        layout={"responsive"}
+                       priority={true}
                 />
             </div>
             <div className={`md:basis-2/4 sm:basis-3/4 `}>
