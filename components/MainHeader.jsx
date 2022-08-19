@@ -7,10 +7,13 @@ function MainHeader(props) {
         <div
             className={`containerDiv flex items-center py-1  `}>
             <div className={`basis-1/4 flex items-center`}>
-                <Image src={`https://via.placeholder.com/300x100.png?text=Logo+Placeholder`} width={300}
-                       height={50}/>
+                <Image src={`https://via.placeholder.com/300x50.png?text=Logo+Placeholder`}
+                       width={300}
+                       height={50}
+                       layout={"responsive"}
+                />
             </div>
-            <div className={`basis-2/4`}>
+            <div className={`md:basis-2/4 sm:basis-3/4 `}>
 
                 <form>
                     <label htmlFor="default-search"
@@ -43,7 +46,7 @@ function MainHeader(props) {
                 </form>
 
             </div>
-            <div className={`basis-1/4 flex justify-end gap-x-5`}>
+            <div className={`md:basis-1/4 hidden md:flex justify-end gap-x-5 `}>
                 <div className={`flex items-center md:text-md lg:text-lg cursor-pointer`}>
                     <BiCart
                         className={`text-2xl`}/>
