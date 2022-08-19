@@ -9,4 +9,7 @@
   .headerText {
     @apply text-xl uppercase text-center text-white  font-bold
   }
+  .containerDiv {
+    @apply container mx-auto w-full
+  }
 }
