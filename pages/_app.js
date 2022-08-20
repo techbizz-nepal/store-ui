@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import {RecoilRoot} from "recoil";
-import { ThemeProvider } from "next-themes";
+import {ThemeProvider} from "next-themes";
 
 function MyApp({Component, pageProps}) {
     return (

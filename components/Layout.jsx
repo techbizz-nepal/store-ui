@@ -6,7 +6,6 @@ import InfoHeader from "./common/InfoHeader";
 import MainHeader from "./common/MainHeader";
 import Navigation from "./common/Navigation";
 
-// import
 function Layout({children}) {
     return (
         <div className={`bg-slate-100`}>

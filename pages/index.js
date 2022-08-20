@@ -1,13 +1,37 @@
 import Layout from "../components/Layout";
+import axios from "axios";
+import {useSetRecoilState} from "recoil";
+import {departmentsState} from "../store/atoms";
+import React from "react";
 
-export default function Home() {
+export const DepartmentContext = React.createContext(null)
+export default function Home({serverData, error}) {
+    // const setDepartmentState = useSetRecoilState(departmentsState)
+    // if (error !== null) {
+    //     setDepartmentState(serverData.categories)
+    // }
     return (
-        <Layout>
-            {/*<div className={`flex flex-col gap-y-7 items-center cursor-pointer transition ease-in-out delay-150  `}>
-                <div className={`w-80 transition ease-in-out blur-sm hover:blur-none hover:scale-110`}>
-                    Index
-                </div>
-            </div>*/}
-        </Layout>
+        <DepartmentContext.Provider value={serverData.categories}>
+            <Layout>
+
+            </Layout>
+        </DepartmentContext.Provider>
     )
 }
+
+export async function getServerSideProps(context) {
+    let serverData = null
+    let error = null
+    try {
+        const response = await axios.get('http://api.techbizz.test');
+        const {data} = await response
+        serverData = data
+    } catch (e) {
+        error = e.response.data
+    }
+    return {
+
+        props: {serverData, error}, // will be passed to the page component as props
+    }
+}
+
