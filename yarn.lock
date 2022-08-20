@@ -1932,6 +1932,11 @@ tailwindcss-animatecss@^1.0.7:
   resolved "https://registry.yarnpkg.com/tailwindcss-animatecss/-/tailwindcss-animatecss-1.0.7.tgz#7ee39cec68842692be27c31735a73c3bb4b7cb83"
   integrity sha512-PSGZDYSOqRNm+C/hJTMfw1pj4nprPQfbNh/wrYDC4G0R9dqtepPncIlKAFNSl7nTUFxH9ynhvBwcIul093ceXw==
 
+tailwindcss-no-scrollbar@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/tailwindcss-no-scrollbar/-/tailwindcss-no-scrollbar-1.0.1.tgz#e904053cd6f7a4c8884dea5b069eea9b8bfe63a6"
+  integrity sha512-6Jy3iFvlQ8hZ3TdM+c96GMk1hrPYZGxvUghIQvEGGzp6u2JP/iZGXMoOL3/R2Sb4VisUku0oz8NZ9MT4LTgu4w==
+
 tailwindcss@^3.1.8:
   version "3.1.8"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.1.8.tgz#4f8520550d67a835d32f2f4021580f9fddb7b741"
