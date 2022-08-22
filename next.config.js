@@ -6,7 +6,8 @@ const nextConfig = {
         domains: ['via.placeholder.com', 'localhost','images.unsplash.com']
     },
     env: {
-        APP_URL: "http://localhost:3000"
+        APP_URL: "http://localhost:3000",
+        SERVER_API: "http://api.techbizz.test"
     }
 }
 

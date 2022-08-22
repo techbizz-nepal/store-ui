@@ -5,6 +5,7 @@ import Footer from "./common/Footer";
 import InfoHeader from "./common/InfoHeader";
 import MainHeader from "./common/MainHeader";
 import Navigation from "./common/Navigation";
+import Sidebar from "./common/Sidebar";
 
 function Layout({children}) {
     return (
@@ -12,6 +13,7 @@ function Layout({children}) {
             <InfoHeader></InfoHeader>
             <MainHeader></MainHeader>
             <Navigation/>
+            <Sidebar/>
             <Content>{children}</Content>
             <Footer></Footer>
         </div>

@@ -19,7 +19,6 @@ function Navigation(props) {
                 </div>
 
             </div>
-            <Sidebar/>
         </div>
     );
 }

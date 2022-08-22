@@ -8,17 +8,15 @@ import {BiChevronDown} from "react-icons/bi";
 function Sidebar(props) {
     const [isOpen, setIsOpen] = useRecoilState(sidebarState)
     const departments = React.useContext(DepartmentContext)
-    useEffect(() => {
-        console.log(departments)
-    });
+
 
     const sidebarDivStyle = isOpen
-        ? 'flex flex-col absolute top-0 bg-white w-3/12 p-5 overflow-hidden'
+        ? 'flex flex-col absolute top-0 bg-white w-3/12 overflow-hidden'
         : 'hidden'
     const SingleDepartment = ({department}) =>
-        <div className={`flex justify-between`}>
+        <div className={`flex justify-between items-center cursor-pointer`} onClick={(event) => console.log(department.id) }>
             <li
-                className={`p-3 cursor-pointer`}
+                className={`p-3`}
                 key={department.id}>
                 <a className={`hover:text-blue-400`}>
                     {department.title}
@@ -30,12 +28,12 @@ function Sidebar(props) {
     return (
         <div className={sidebarDivStyle}>
 
-            <div className={`flex justify-between text-2xl pb-5 items-center `}>
+            <div className={`flex justify-between text-2xl p-3 items-center `}>
                 <div>Departments</div>
                 <CgClose className={`cursor-pointer`} onClick={() => setIsOpen(!isOpen)}/>
             </div>
             <div>
-                <ul>
+                <ul className={`max-h-screen overflow-y-scroll`}>
                     {
                         departments.length
                         && departments.map((department) => <SingleDepartment department={department}
