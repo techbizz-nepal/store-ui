@@ -1,14 +1,13 @@
 import React from 'react';
 import {GiHamburgerMenu} from "react-icons/gi";
-import {useRecoilState, useRecoilValue, useSetRecoilState} from "recoil";
+import {useRecoilState} from "recoil";
 import {sidebarState} from "../../store/atoms";
-import Sidebar from "./Sidebar";
 
 function Navigation(props) {
     const [isOpen, setIsOpen] = useRecoilState(sidebarState)
 
     return (
-        <div className={`bg-gray-300`} id={`navigationWrapper`}>
+        <div className={`bg-blue-500 text-white`} id={`navigationWrapper`}>
             <div className={`containerDiv flex justify-start items-center`} id={`navigationContainer`}>
                 <div
                     onClick={(e) => setIsOpen(!isOpen)}
