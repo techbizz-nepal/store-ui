@@ -11,7 +11,7 @@ function Sidebar(props) {
 
 
     const sidebarDivStyle = isOpen
-        ? 'flex flex-col absolute top-0 bg-white w-3/12 overflow-hidden'
+        ? 'flex flex-col absolute  top-0 bg-white md:w-3/12 w-screen overflow-hidden'
         : 'hidden'
     const SingleDepartment = ({department}) =>
         <div className={`flex justify-between items-center cursor-pointer`} onClick={(event) => console.log(department.id) }>
@@ -28,10 +28,11 @@ function Sidebar(props) {
     return (
         <div className={sidebarDivStyle}>
 
-            <div className={`flex justify-between text-2xl p-3 items-center `}>
-                <div>Departments</div>
+            <div className={`flex justify-between text-2xl p-3 items-center border-b-4 border-b-gray-900`}>
+                <div className={`text-2xl font-bold`}>Departments</div>
                 <CgClose className={`cursor-pointer`} onClick={() => setIsOpen(!isOpen)}/>
             </div>
+
             <div>
                 <ul className={`max-h-screen overflow-y-scroll`}>
                     {

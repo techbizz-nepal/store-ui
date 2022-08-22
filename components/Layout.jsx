@@ -10,12 +10,14 @@ import Sidebar from "./common/Sidebar";
 function Layout({children}) {
     return (
         <div className={`bg-slate-100`}>
+
             <InfoHeader></InfoHeader>
             <MainHeader></MainHeader>
             <Navigation/>
-            <Sidebar/>
+
             <Content>{children}</Content>
             <Footer></Footer>
+            <Sidebar/>
         </div>
     );
 }

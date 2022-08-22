@@ -6,7 +6,8 @@ import HeaderSearchInput from "./HeaderSearchInput";
 function MainHeader(props) {
     return (
         <div id={`mainHeader`}
-            className={`containerDiv flex items-center py-4  gap-x-2 sticky gap-y-3`}>
+             className={`containerDiv flex items-center px-1 py-4 gap-x-2 sticky gap-y-3`}
+        >
             <div className={`basis-1/4 `}>
                 <Image src={`https://via.placeholder.com/200x20.png?text=Logo+Placeholder`}
                        width={200}
