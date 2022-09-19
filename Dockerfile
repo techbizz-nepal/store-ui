@@ -18,3 +18,4 @@ WORKDIR /store
 
 # Running the app
 # CMD "yarn" "dev"
+EXPOSE 3001
