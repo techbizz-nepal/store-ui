@@ -1,20 +1,19 @@
-import React, {useEffect} from 'react';
-import {useRecoilState, useRecoilValue} from "recoil";
+import React, {useContext} from 'react';
+import {useRecoilState} from "recoil";
 import {sidebarState} from "../../store/atoms";
 import {CgClose} from "react-icons/cg";
-import {DepartmentContext} from "../../pages";
 import {BiChevronDown} from "react-icons/bi";
+import {useDepartmentContext} from "../../contexts/department";
 
 function Sidebar(props) {
     const [isOpen, setIsOpen] = useRecoilState(sidebarState)
-    const departments = React.useContext(DepartmentContext)
-
-
+    const {departments} = useDepartmentContext()
     const sidebarDivStyle = isOpen
         ? 'flex flex-col absolute  top-0 bg-white md:w-3/12 w-screen overflow-hidden'
         : 'hidden'
     const SingleDepartment = ({department}) =>
-        <div className={`flex justify-between items-center cursor-pointer`} onClick={(event) => console.log(department.id) }>
+        <div className={`flex justify-between items-center cursor-pointer`}
+             onClick={(event) => console.log(department.id)}>
             <li
                 className={`p-3`}
                 key={department.id}>
@@ -36,7 +35,7 @@ function Sidebar(props) {
             <div>
                 <ul className={`max-h-screen overflow-y-scroll`}>
                     {
-                        departments.length
+                        departments?.length
                         && departments.map((department) => <SingleDepartment department={department}
                                                                              key={department.id}/>)
                     }
