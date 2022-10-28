@@ -8,16 +8,12 @@ export const DepartmentContextProvider = ({children}) => {
 
     useEffect(() => {
         const loadDepartments = async () => {
-            // await api().get(``).then(({data}) => {
-            //     if (!data[0].error) {
-            //         setDepartments(data[1].departments)
-            //     }
-            // })
-            setDepartments([
-                {id: 1, title: "department1"},
-                {id: 2, title: "department2"},
-                {id: 3, title: "department3"}
-            ])
+            await api().get(`/v1/admin/getNestedCategory`).then(({data}) => {
+                if (!data[0].error) {
+                    // console.log(data[1])
+                    setDepartments(data[1].categories)
+                }
+            })
         }
         loadDepartments().then(r => r)
     }, []);

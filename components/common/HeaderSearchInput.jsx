@@ -8,7 +8,6 @@ function HeaderSearchInput(props) {
     //     //     effect
     //     // };
     // }, [searchKey]);
-    console.log(searchKey)
 
     return (
         <form>
