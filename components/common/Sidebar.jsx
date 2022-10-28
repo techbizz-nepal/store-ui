@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import {useRecoilState} from "recoil";
 import {sidebarState} from "../../store/atoms";
 import {CgClose} from "react-icons/cg";
