@@ -12,18 +12,53 @@ function Sidebar(props) {
     const sidebarDivStyle = isOpen
         ? 'flex flex-col absolute  top-0 bg-white md:w-3/12 w-screen overflow-hidden'
         : 'hidden'
-    const SingleDepartment = ({department}) =>
-        <div className={`flex justify-between items-center cursor-pointer`}
-             onClick={(event) => console.log(department.id)}>
-            <li
-                className={`p-3`}
-                key={department.id}>
-                <a className={`hover:text-blue-400`}>
-                    {department.label}
-                </a>
-            </li>
-            <BiChevronDown className={`cursor-pointer`}/>
-        </div>
+
+    const TestComponent = ({id, label, children_categories}) => {
+        if (!children_categories.length) {
+            return null
+        }
+
+        return (
+            <ul className={`flex justify-between items-center cursor-pointer`}
+                 onClick={(event) => console.log(id)}>
+                <li
+                    className={`p-3`}
+                    key={id}>
+                    <a className={`hover:text-blue-400`}>
+                        {label}
+                    </a>
+                </li>
+                {
+                    children_categories.length ? <BiChevronDown className={`cursor-pointer`}/> : null
+                }
+            </ul>
+        )
+    }
+
+    const SingleDepartment = ({department: {id, label, children_categories}}) => {
+
+
+
+        return (
+            <div className={`flex justify-between items-center cursor-pointer`}
+                 onClick={(event) => console.log(id)}>
+                <li
+                    className={`p-3`}
+                    key={id}>
+                    <a className={`hover:text-blue-400`}>
+                        {label}
+
+                    </a>
+                    <TestComponent id={id} children_categories={children_categories} label={label} />
+
+                </li>
+                {
+                    children_categories.length ? <BiChevronDown className={`cursor-pointer`}/> : null
+                }
+            </div>
+        )
+    }
+
 
     return (
         <div className={sidebarDivStyle}>
