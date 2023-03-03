@@ -10,8 +10,7 @@ export const DepartmentContextProvider = ({children}) => {
         const loadDepartments = async () => {
             await api().get(`/v1/admin/getNestedCategory`).then(({data}) => {
                 if (!data[0].error) {
-                    // console.log(data[1])
-                    setDepartments(data[1].categories)
+                    setDepartments([...data[1].categories].slice(0, 18))
                 }
             })
         }

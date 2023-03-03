@@ -1,23 +1,20 @@
 import React from 'react';
-import TopSearchComponent from "./common/TopSearchComponent";
-import Content from "./common/Content";
-import Footer from "./common/Footer";
-import InfoHeader from "./common/InfoHeader";
 import MainHeader from "./common/MainHeader";
 import Navigation from "./common/Navigation";
-import Sidebar from "./common/Sidebar";
+import SideBar from "./common/SideBar";
+import {useSidebarContext} from "../contexts/sidebarContext";
 
 function Layout({children}) {
+    const {toggleSidebar} = useSidebarContext()
     return (
-        <div className={`bg-slate-100`}>
-
-            <InfoHeader></InfoHeader>
+        <div className={`bg-slate-300`}>
+            {/*<InfoHeader></InfoHeader>*/}
             <MainHeader></MainHeader>
             <Navigation/>
 
-            <Content>{children}</Content>
-            <Footer></Footer>
-            <Sidebar/>
+            {/*<Content>{children}</Content>*/}
+            {/*<Footer></Footer>*/}
+            <SideBar toggleSidebar={toggleSidebar} />
         </div>
     );
 }

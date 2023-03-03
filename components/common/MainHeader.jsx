@@ -25,11 +25,11 @@ function MainHeader(props) {
             </div>
 
             <div className={`md:basis-1/4 hidden md:flex justify-end gap-x-5 `}>
-                <div className={`flex items-center md:text-md lg:text-lg cursor-pointer`}>
+                <div className={`flex items-center md:text-md lg:text-lg cursor-pointer text-black`}>
                     <BiCart
                         className={`text-2xl`}/>
                 </div>
-                <div className={`flex items-center gap-x-2  cursor-pointer`}>
+                <div className={`flex items-center gap-x-2  cursor-pointer text-black`}>
                     <BiLogIn
                         className={`text-2xl`}/> Login
                 </div>
