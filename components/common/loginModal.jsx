@@ -2,9 +2,11 @@ import React, {useState} from 'react';
 import {AiOutlineCloseCircle} from "react-icons/ai";
 
 const LoginModal = ({open, setOpen}) => {
+
     if (!open) return null
+
     return (
-        <div className={`absolute top-0 bottom-0 bg-blend-overlay bg-red-200 w-full h-screen flex items-center justify-center z-50`}>
+        <div className={`absolute top-0 bottom-0 bg-opacity-40 bg-slate-200 w-full h-screen flex items-center justify-center z-50`}>
             <div className={`flex flex-col w-[50vh] gap-y-2 bg-white text-black rounded-md p-5 shadow-lg`}>
                 <div  onClick={setOpen} className={`flex text-2xl text-red-800 justify-end cursor-pointer`}><AiOutlineCloseCircle  /></div>
                 <form className={`flex flex-col gap-y-8 `}>
