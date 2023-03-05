@@ -12,8 +12,8 @@ function Navigation(props) {
                     onClick={() => setIsOpen(!isOpen)}
                     className={`flex gap-x-2 items-center pr-6 py-4 px-2 cursor-pointer hover:bg-gray-900 hover:text-white select-none`}
                     id={`departmentDiv`}>
-                    <GiHamburgerMenu className={`text-2xl font-light`}/>
-                    <p className={`text-2xl font-light`}>Departments</p>
+                    <GiHamburgerMenu className={`sm:text-sm md:text-md lg:text-lg font-light`}/>
+                    <p className={`sm:text-sm md:text-md lg:text-lg font-light`}>Departments</p>
                 </div>
 
             </div>

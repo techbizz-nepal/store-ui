@@ -1,9 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Image from 'next/image';
 import {BiCart, BiLogIn} from "react-icons/bi";
 import HeaderSearchInput from "./HeaderSearchInput";
+import LoginModal from "./loginModal";
+import {Portal} from "../Portal";
 
 function MainHeader(props) {
+    const [open, setOpen] = useState(false)
+    const handleLoginClick = () => {
+        setOpen(!open)
+    }
+    const handleOpen = () => {
+        setOpen(!open)
+    }
     return (
         <div id={`mainHeader`}
              className={`containerDiv flex items-center px-1 py-4 gap-x-2 sticky gap-y-3`}
@@ -29,12 +38,13 @@ function MainHeader(props) {
                     <BiCart
                         className={`text-2xl`}/>
                 </div>
-                <div className={`flex items-center gap-x-2  cursor-pointer text-black`}>
+                <div className={`flex items-center gap-x-2  cursor-pointer text-black`} onClick={handleLoginClick}>
                     <BiLogIn
                         className={`text-2xl`}/> Login
                 </div>
 
             </div>
+            <Portal><LoginModal open={open} setOpen={handleOpen}/></Portal>
         </div>
     );
 }

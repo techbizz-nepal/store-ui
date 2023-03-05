@@ -1,23 +1,23 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import api from "../utils/api";
 
-const DepartmentContext = createContext({})
+const DepartmentContext = createContext({departmentsArray:[]})
 
 export const DepartmentContextProvider = ({children}) => {
-    const [departments, setDepartments] = useState([]);
+    const [departmentsArray, setDepartmentsArray] = useState([]);
 
     useEffect(() => {
         const loadDepartments = async () => {
             await api().get(`/v1/admin/getNestedCategory`).then(({data}) => {
                 if (!data[0].error) {
-                    setDepartments([...data[1].categories].slice(0, 18))
+                    setDepartmentsArray([...data[1].categories].slice(0, 18))
                 }
             })
         }
         loadDepartments().then(r => r)
     }, []);
 
-    const context = {departments}
+    const context = {departmentsArray}
     return (
         <DepartmentContext.Provider value={context}>
             {children}
