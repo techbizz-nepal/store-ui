@@ -12,4 +12,7 @@
   .containerDiv {
     @apply container mx-auto w-full
   }
+  .inputDiv{
+    @apply border border-blue-300  p-1
+  }
 }
