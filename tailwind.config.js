@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
 module.exports = {
     content: [
         "./pages/**/*.{js,ts,jsx,tsx}",
@@ -7,6 +7,12 @@ module.exports = {
     ],
     theme: {
         extend: {
+            colors: {
+                primary: colors.amber,
+                secondary: colors.emerald,
+                neutral:colors.slate,
+                action:colors.fuchsia
+            },
             keyframes: {
                 scale: {
                     "0%, 100%": { transform: "scale(1)" },

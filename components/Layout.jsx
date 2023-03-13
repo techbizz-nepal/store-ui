@@ -8,15 +8,15 @@ import Content from "./common/Content";
 function Layout({children}) {
     const {departmentsArray} = useDepartmentContext()
     return (
-        <div className={`bg-slate-300`}>
+        <>
             {/*<InfoHeader></InfoHeader>*/}
             <MainHeader></MainHeader>
             <Navigation/>
 
             <Content>{children}</Content>
             {/*<Footer></Footer>*/}
-            <SideBar departments={departmentsArray} />
-        </div>
+            <SideBar departments={departmentsArray}/>
+        </>
     );
 }
 
