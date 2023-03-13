@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Image from 'next/image';
 import {BiCart, BiLogIn} from "react-icons/bi";
 import HeaderSearchInput from "./HeaderSearchInput";
-import LoginModal from "./loginModal";
+import AuthModal from "./AuthModal";
 import {Portal} from "../Portal";
 
 function MainHeader(props) {
@@ -44,7 +44,7 @@ function MainHeader(props) {
                 </div>
 
             </div>
-            <Portal><LoginModal open={open} setOpen={handleOpen}/></Portal>
+            <Portal><AuthModal open={open} setOpen={handleOpen}/></Portal>
         </div>
     );
 }
