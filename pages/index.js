@@ -1,7 +1,6 @@
 import Layout from "../components/Layout";
 import React from "react";
 import Head from "next/head";
-import Content from "../components/common/Content";
 
 const Home = ({serverData, error}) => {
     if (error) {

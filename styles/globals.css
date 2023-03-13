@@ -2,17 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
+@layer utilities {
   .sectionDiv {
     @apply flex flex-col gap-y-20 py-20 container mx-auto
   }
   .headerText {
-    @apply text-xl uppercase text-center text-white  font-bold
+    @apply text-xl uppercase text-center text-white font-bold
   }
   .containerDiv {
     @apply container mx-auto w-full
   }
   .inputDiv{
-    @apply border border-blue-300  p-1
+    @apply border border-blue-300 p-1 shadow-amber-50 inset-0
+  }
+  .bg-primary{
+    @apply bg-green-700
+  }
+  .bg-secondary{
+    @apply bg-green-800
+  }
+  .bg-action{
+    @apply bg-orange-600
   }
 }
