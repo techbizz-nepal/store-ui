@@ -5,6 +5,7 @@ import FormField from "./FormField";
 
 const LoginModal = ({open, setOpen}) => {
     const {register, handleSubmit, watch, formState: {errors}} = useForm();
+    const [effect, setEffect] = useState(false);
     if (!open) return null
     const onSubmit = () => {
         console.log('submitted')
@@ -46,7 +47,10 @@ const LoginModal = ({open, setOpen}) => {
                         <div className={`flex flex-col gap-y-2`}>
                             <input type={`submit`}
                                    value={`Login`}
-                                   className={`border p-2 bg-action text-white font-bold rounded p-1 cursor-pointer bg-white`}/>
+                                   className={`${effect && 'animate-scale'} border p-2 bg-action text-white font-bold rounded p-1 cursor-pointer bg-white`}
+                                   onClick={() => setEffect(true)}
+                                   onAnimationEnd={() => setEffect(false)}
+                            />
                             <input type={`submit`}
                                    value={`Signup`}
                                    className={`border p-2 bg-action text-white font-bold rounded p-1 cursor-pointer bg-white`}/>
