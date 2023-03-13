@@ -3,25 +3,52 @@
 @tailwind utilities;
 
 @layer utilities {
-  .sectionDiv {
-    @apply flex flex-col gap-y-20 py-20 container mx-auto
-  }
-  .headerText {
-    @apply text-xl uppercase text-center text-white font-bold
-  }
-  .containerDiv {
-    @apply container mx-auto w-full
-  }
-  .inputDiv{
-    @apply border border-blue-300 p-1 shadow-amber-50 inset-0
-  }
-  .bg-primary{
-    @apply bg-green-700
-  }
-  .bg-secondary{
-    @apply bg-green-800
-  }
-  .bg-action{
-    @apply bg-orange-600
-  }
+    .sectionDiv {
+        @apply flex flex-col gap-y-20 py-20 container mx-auto
+    }
+
+    .headerText {
+        @apply text-xl uppercase text-center text-white font-bold
+    }
+
+    .containerDiv {
+        @apply container mx-auto w-full
+    }
+
+    .inputDiv {
+        @apply border border-blue-300 p-1 shadow-amber-50 inset-0
+    }
+
+    .bg-main {
+        @apply bg-primary-900
+    }
+
+    .bg-highlight {
+        @apply bg-primary-700
+    }
+
+    .bg-action {
+        @apply bg-secondary-600
+    }
+
+    .text-action {
+        @apply text-neutral-700
+    }
+
+    .navigationWrapper{
+        @apply bg-main text-white text-lg
+    }
+    .navigationContainer{
+        @apply container mx-auto w-full flex items-center justify-between text-2xl sm:text-sm lg:text-lg font-light font-semibold
+    }
+    .singleDepartmentWrapper {
+        @apply flex-none flex-col gap-y-3 bg-neutral-200 hover:overflow-y-auto text-white shadow-lg
+    }
+
+    .singleDepartmentDiv {
+        @apply py-4 px-6 cursor-pointer hover:bg-primary-700 sm:w-64 md:w-80  text-black hover:text-white
+    }
+
+
+
 }

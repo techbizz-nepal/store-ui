@@ -1,21 +1,20 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 import {useSidebarContext} from "../../contexts/sidebarContext";
 import {useRouter} from "next/router";
 
-const SingleDepartment = ({department: {id, label, value, children_categories}, onDepartmentClick}) => {
-
-
+const SingleDepartment = ({
+                              department: {id, label, value, children_categories},
+                              onDepartmentClick,
+                              refObject
+                          }) => {
     return (
-        <div className={`flex justify-between items-center cursor-pointer`}
-             onClick={(event) => onDepartmentClick(event, value)}>
-            <li
-                className={`p-3`}
-                key={id}>
-                <a className={`hover:text-blue-400 text-white`}>
-                    {label} ({children_categories.length})
-                </a>
-
-            </li>
+        <div className={`singleDepartmentDiv`}
+             ref={refObject}
+             onClick={(event) => onDepartmentClick(event, value)}
+        >
+            <p>
+                {label} ({children_categories.length})
+            </p>
         </div>
     )
 }
@@ -26,28 +25,24 @@ function SideBar({departments}) {
     const router = useRouter()
     const handleDepartmentClick = (e, value) => {
         router.push(value).catch((e) => console.log(e))
-        setTimeout(()=>{
+        setTimeout(() => {
             setIsOpen(!isOpen)
         }, 1000)
     }
     return (
         <div
-            className={`z-10 absolute flex top-0 left-0 w-full h-screen transition-all ease-in-out duration-300 ${visibility} `}>
+            className={`z-10 absolute flex top-0 left-0 w-full h-full transition-all ease-in-out duration-300 ${visibility} `}>
+            <div className={`singleDepartmentWrapper`}>
 
-            <div className={`flex-none bg-slate-500 overflow-y-scroll `}>
-
-                <ul className={`w-80`}>
-                    {
-                        departments?.length
-                        && departments.map((department) => <SingleDepartment onDepartmentClick={handleDepartmentClick}
-                                                                             department={department}
-                                                                             key={department.id}/>)
-                    }
-                </ul>
+                {
+                    departments?.length
+                    && departments.map((department) => <SingleDepartment
+                        onDepartmentClick={handleDepartmentClick}
+                        department={department}
+                        key={department.id}/>)
+                }
             </div>
-
             <div className={`flex-1`} onClick={() => setIsOpen(!isOpen)}></div>
-
         </div>
     );
 }

@@ -51,9 +51,6 @@ const LoginModal = ({open, setOpen}) => {
                                    onClick={() => setEffect(true)}
                                    onAnimationEnd={() => setEffect(false)}
                             />
-                            <input type={`submit`}
-                                   value={`Signup`}
-                                   className={`border p-2 bg-action text-white font-bold rounded p-1 cursor-pointer bg-white`}/>
                         </div>
                     </form>
                 </div>
