@@ -7,11 +7,12 @@ import Content from "./common/Content";
 
 function Layout({children}) {
     const {departmentsArray} = useDepartmentContext()
+
     return (
         <>
             {/*<InfoHeader></InfoHeader>*/}
             <MainHeader></MainHeader>
-            <Navigation/>
+            <Navigation />
 
             <Content>{children}</Content>
             {/*<Footer></Footer>*/}
