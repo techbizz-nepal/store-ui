@@ -18,13 +18,7 @@ function MainHeader(props) {
              className={`containerDiv flex items-center px-1 py-4 gap-x-2 sticky gap-y-3`}
         >
             <div className={`basis-1/4 `}>
-                <Image src={`https://via.placeholder.com/200x20.png?text=Logo+Placeholder`}
-                       width={200}
-                       height={20}
-                       alt={`logo`}
-                       layout={"responsive"}
-                       priority={true}
-                />
+                <h1 className={`text-4xl`}>THAMELMART</h1>
             </div>
 
             <div className={`md:basis-2/4 sm:basis-3/4 `}>
