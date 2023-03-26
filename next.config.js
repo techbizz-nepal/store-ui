@@ -3,7 +3,7 @@ const nextConfig = {
     reactStrictMode: true,
     swcMinify: true,
     images: {
-        domains: ['via.placeholder.com', 'localhost','images.unsplash.com']
+        domains: ['via.placeholder.com', 'localhost', 'images.unsplash.com', 'nextui.org']
     },
     env: {
         apiHost: 'http://api.techbizz.test/api',
