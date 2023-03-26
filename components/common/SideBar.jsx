@@ -24,7 +24,7 @@ function SideBar({departments}) {
     const visibility = isOpen ? `translate-0` : `-translate-x-full`
     const router = useRouter()
     const handleDepartmentClick = (e, value) => {
-        router.push(value).catch((e) => console.log(e))
+        router.push('/category/'+value).catch((e) => console.log(e))
         setTimeout(() => {
             setIsOpen(!isOpen)
         }, 1000)
