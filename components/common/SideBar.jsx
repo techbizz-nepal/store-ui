@@ -31,7 +31,8 @@ function SideBar({departments}) {
     }
     return (
         <div
-            className={`z-10 absolute flex top-0 left-0 w-full h-full transition-all ease-in-out duration-300 ${visibility} `}>
+            id={`absoluteWrapper`}
+            className={`z-10 fixed flex top-0 left-0 w-full h-screen transition-all ease-in-out duration-300 ${visibility}`}>
             <div className={`singleDepartmentWrapper`}>
 
                 {

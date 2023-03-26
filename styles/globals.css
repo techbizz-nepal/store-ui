@@ -42,7 +42,7 @@
         @apply container mx-auto w-full flex items-center justify-between text-2xl sm:text-sm lg:text-lg font-light font-semibold
     }
     .singleDepartmentWrapper {
-        @apply flex-none flex-col gap-y-3 bg-neutral-200 hover:overflow-y-auto text-white shadow-lg
+        @apply flex-none flex-col gap-y-3 bg-neutral-200 overflow-y-auto text-white shadow-lg
     }
 
     .singleDepartmentDiv {
