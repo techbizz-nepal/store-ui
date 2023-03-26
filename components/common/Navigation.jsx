@@ -16,46 +16,51 @@ const SidebarButton = ({setIsOpen, isOpen}) => {
         </div>
     )
 }
-const PageNavigation = ({navigations}) => {
-    const router = useRouter()
-    if(!navigations.length) return null
-    return (
-        <div className={`flex gap-x-5 `}>
-            {navigations.map(navigation => (
-                <div key={navigation.id}
-                     onClick={() => router.push(navigation.path)}
-                     className={`flex items-center py-4 px-4 cursor-pointer hover:bg-highlight hover:text-white select-none`}>{navigation.label}
-                </div>
-            ))}
-
-        </div>
-    )
-}
-const SupportDiv = () => {
-    return (
-        <div
-            className={`flex gap-x-2 items-center pr-6 py-4 px-4 cursor-pointer hover:bg-highlight hover:text-white select-none`}>
-            <MdSupportAgent/>
-            <a href={`tel:0.00.0000`} className={`select-none cursor-pointer text-white`}>0.00.0000</a>
-        </div>
-    )
-}
 
 function Navigation() {
+    const router = useRouter()
     const {isOpen, setIsOpen} = useSidebarContext()
     const [navigations, setNavigations] = useState([
         {"id": 1, "active": 1, "label": "Home", "path": "/"},
         {"id": 2, "active": 1, "label": "About", "path": "/page/about"},
         {"id": 3, "active": 1, "label": "Contact", "path": "/page/contact"}
     ])
+
+    if (!navigations.length) return null
     return (
         <div className={`navigationWrapper`} id={`navigationWrapper`}>
             <div
                 className={`navigationContainer`}
                 id={`navigationContainer`}>
-                <SidebarButton setIsOpen={setIsOpen} isOpen={isOpen}/>
-                <PageNavigation navigations={navigations}/>
-                <SupportDiv/>
+
+                {/* Sidebar button */}
+                <div
+                    onClick={() => setIsOpen(!isOpen)}
+                    className={`flex gap-x-2 items-center pr-6 py-4 px-4 cursor-pointer hover:bg-highlight hover:text-white select-none`}
+                    id={`departmentDiv`}
+                >
+                    <GiHamburgerMenu/>
+                    <div>Departments</div>
+                </div>
+
+                {/*Page navigation*/}
+                <div className={`flex gap-x-5 `}>
+                    {navigations.map(navigation => (
+                        <div key={navigation.id}
+                             onClick={() => router.push(navigation.path)}
+                             className={`flex items-center py-4 px-4 cursor-pointer hover:bg-highlight hover:text-white select-none`}>{navigation.label}
+                        </div>
+                    ))}
+
+                </div>
+
+                {/*Support div section*/}
+                <div
+                    className={`flex gap-x-2 items-center pr-6 py-4 px-4 cursor-pointer hover:bg-highlight hover:text-white select-none`}>
+                    <MdSupportAgent/>
+                    <a href={`tel:0.00.0000`} className={`select-none cursor-pointer text-white`}>0.00.0000</a>
+                </div>
+
             </div>
         </div>
     );
