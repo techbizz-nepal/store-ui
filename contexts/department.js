@@ -5,13 +5,11 @@ const DepartmentContext = createContext({departmentsArray: []})
 
 export const DepartmentContextProvider = ({children}) => {
     const [departmentsArray, setDepartmentsArray] = useState([]);
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [error, setError] = useState()
 
     useEffect(() => {
         const loadDepartments = async () => {
-            setLoading(true)
-
             await api()
                 .get(`/v1/admin/getNestedCategory`)
                 .then(
