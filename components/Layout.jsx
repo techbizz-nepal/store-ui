@@ -4,15 +4,17 @@ import Navigation from "./common/Navigation";
 import SideBar from "./common/SideBar";
 import {useDepartmentContext} from "../contexts/department";
 import Content from "./common/Content";
+import {Loading} from "@nextui-org/react";
 
 function Layout({children}) {
-    const {departmentsArray} = useDepartmentContext()
-
+    const {departmentsArray, loading, error} = useDepartmentContext()
+    if (loading) return <Loading size="xl" />
+    if (error) return <h1>Error occurred: {error}</h1>
     return (
         <>
             {/*<InfoHeader></InfoHeader>*/}
             <MainHeader></MainHeader>
-            <Navigation />
+            <Navigation/>
 
             <Content>{children}</Content>
             {/*<Footer></Footer>*/}
