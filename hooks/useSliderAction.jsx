@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 const useSliderAction = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
@@ -37,6 +37,12 @@ const useSliderAction = () => {
     const goToSlide = (index) => {
         setCurrentIndex(index)
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => nextSlide(), 10000)
+        return () => clearInterval(interval)
+    }, [currentIndex, nextSlide])
+
     return {currentIndex, slides, prevSlide, nextSlide, goToSlide}
 }
 export default useSliderAction

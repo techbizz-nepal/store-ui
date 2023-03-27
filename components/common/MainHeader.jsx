@@ -27,10 +27,10 @@ function MainHeader(props) {
             </div>
 
             <div className={`md:basis-1/4 hidden md:flex justify-end gap-x-5 `}>
-                <div className={`flex gap-x-2 items-center  cursor-pointer select-none`}>
+                <div className={`flex gap-x-2 items-center cursor-pointer select-none`}>
 
-                    <MdSupportAgent/>
-                    <a href={`tel:0.00.0000`} className={`select-none cursor-pointer text-black`}>0.00.0000</a>
+                    <MdSupportAgent className={`text-4xl`}/>
+                    <a href={`tel:0.00.0000`} className={`select-none cursor-pointer text-black text-4xl`}>0.00.0000</a>
                 </div>
 
             </div>
