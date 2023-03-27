@@ -45,7 +45,7 @@ const AuthModal = ({open, setOpen}) => {
     }
     return (
         <div
-            className={`absolute top-0 bottom-0 bg-opacity-80 bg-black w-full h-screen flex items-center justify-center`}>
+            className={`fixed top-0 bottom-0 bg-gradient-to-tr from-black  w-full h-screen flex items-center justify-center z-50`}>
 
             <div className={`flex flex-col gap-y-2 bg-white rounded-md p-5 shadow-lg`}>
 

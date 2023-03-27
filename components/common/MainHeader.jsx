@@ -5,19 +5,16 @@ import HeaderSearchInput from "./HeaderSearchInput";
 import AuthModal from "./AuthModal";
 import {Portal} from "../Portal";
 import {useRouter} from "next/router";
+import {MdSupportAgent} from "react-icons/md";
 
 function MainHeader(props) {
-    const [open, setOpen] = useState(false)
+
     const router = useRouter()
-    const handleLoginClick = () => {
-        setOpen(!open)
-    }
-    const handleOpen = () => {
-        setOpen(!open)
-    }
+
+
     return (
         <div id={`mainHeader`}
-             className={`containerDiv flex items-center px-1 py-4 gap-x-2 sticky gap-y-3`}
+             className={`containerDiv flex items-center px-1 py-4 gap-x-2 z-49 gap-y-3`}
         >
             <div className={`basis-1/4 `} onClick={() => router.push('/')}>
                 <h1 className={`text-4xl cursor-pointer select-none`}>THAMELMART</h1>
@@ -30,19 +27,14 @@ function MainHeader(props) {
             </div>
 
             <div className={`md:basis-1/4 hidden md:flex justify-end gap-x-5 `}>
-                <div className={`flex items-center md:text-md lg:text-lg cursor-pointer text-black`}>
-                    <BiCart
-                        className={`text-2xl`}/>
-                </div>
-                <div className={`flex items-center gap-x-2  cursor-pointer text-black`} onClick={handleLoginClick}>
-                    <BiLogIn
-                        className={`text-2xl`}/> Login
+                <div className={`flex gap-x-2 items-center  cursor-pointer select-none`}>
+
+                    <MdSupportAgent/>
+                    <a href={`tel:0.00.0000`} className={`select-none cursor-pointer text-black`}>0.00.0000</a>
                 </div>
 
             </div>
-            <Portal>
-                <AuthModal open={open} setOpen={handleOpen}/>
-            </Portal>
+
         </div>
     );
 }
