@@ -5,6 +5,7 @@ import SideBar from "./common/SideBar";
 import {useDepartmentContext} from "../contexts/department";
 import Content from "./common/Content";
 import {Loading} from "@nextui-org/react";
+import Footer from "./common/Footer";
 
 function Layout({children}) {
     const {departmentsArray, loading, error} = useDepartmentContext()
@@ -17,7 +18,7 @@ function Layout({children}) {
             <Navigation/>
 
             <Content>{children}</Content>
-            {/*<Footer></Footer>*/}
+            <Footer></Footer>
             <SideBar departments={departmentsArray}/>
         </>
     );

@@ -34,7 +34,12 @@
     .text-action {
         @apply text-neutral-700
     }
-
+    .footerWrapper{
+        @apply bg-neutral-200 text-white text-lg
+    }
+    .footerContainer{
+        @apply container mx-auto w-full
+    }
     .navigationWrapper{
         @apply bg-main text-white text-lg
     }
