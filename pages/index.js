@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import Head from "next/head";
 import HeroSlider from "../components/home/HeroSlider";
 import useSliderAction from "../hooks/useSliderAction";
@@ -125,6 +125,12 @@ const Home = ({serverData, error}) => {
             price: "$12.20",
         },
     ])
+
+    useEffect(() => {
+        const interval = setInterval(() => nextSlide(), 5000)
+        return () => clearInterval(interval)
+    }, [currentIndex, nextSlide])
+
     if (error) {
         return <h1>Error Occurred</h1>
     }
@@ -139,9 +145,9 @@ const Home = ({serverData, error}) => {
                         onPrevSlideClick={prevSlide}
                         onNextSlideClick={nextSlide}
             />
-            <Spacer y={3} />
+            <Spacer y={3}/>
             <LatestProduct latestProducts={latestProducts}/>
-            <Spacer y={5} />
+            <Spacer y={5}/>
             <TopProduct topProducts={latestProducts}/>
         </Layout>
     )
