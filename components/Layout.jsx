@@ -4,7 +4,7 @@ import Navigation from "./common/Navigation";
 import SideBar from "./common/SideBar";
 import {useDepartmentContext} from "../contexts/department";
 import Content from "./common/Content";
-import {Loading} from "@nextui-org/react";
+import {Loading, Spacer} from "@nextui-org/react";
 import Footer from "./common/Footer";
 
 function Layout({children}) {
@@ -16,8 +16,8 @@ function Layout({children}) {
             {/*<InfoHeader></InfoHeader>*/}
             <MainHeader></MainHeader>
             <Navigation/>
-
             <Content>{children}</Content>
+            <Spacer y={5} />
             <Footer></Footer>
             <SideBar departments={departmentsArray}/>
         </>
