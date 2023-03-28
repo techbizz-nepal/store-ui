@@ -1,19 +1,22 @@
 import {Card, Grid, Row, Text} from "@nextui-org/react";
 import React from "react";
+import {useRouter} from "next/router";
 
-const LatestProduct = ({latestProducts}) => {
-
+const LatestProduct = ({latestProducts, title}) => {
+    const router = useRouter()
     return (
         <div className={`containerDiv px-4 flex flex-col`}>
-            <div className={`flex items-center justify-between px-4`}>
-                <div><Text h2>Latest Deals</Text></div>
-                <div className={`text-sm hover:text-secondary-600 text-black cursor-pointer select-none`}>View All</div>
-            </div>
+            {
+                title && <div className={`flex items-center justify-between px-4`}>
+                    <div><Text h2>Latest Deals</Text></div>
+                    <div className={`text-sm hover:text-secondary-600 text-black cursor-pointer select-none`}>View All</div>
+                </div>
+            }
             <div>
                 <Grid.Container gap={2} justify="flex-start">
                     {latestProducts.map((item, index) => (
                         <Grid xs={6} sm={3} key={index}>
-                            <Card isPressable>
+                            <Card isPressable onPress={() => router.push('/' + item.title)}>
                                 <Card.Body css={{p: 0}}>
                                     <Card.Image
                                         src={"https://nextui.org" + item.img}

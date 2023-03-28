@@ -1,14 +1,14 @@
 import {Card, Grid, Row, Text} from "@nextui-org/react";
 import React from "react";
 
-const TopProduct = ({topProducts}) => {
+const TopProduct = ({topProducts, title}) => {
 
     return (
         <div className={`containerDiv px-4 flex flex-col`}>
-            <div className={`flex items-center justify-between px-4`}>
+            {title && <div className={`flex items-center justify-between px-4`}>
                 <div><Text h2>Top Products</Text></div>
                 <div className={`text-sm hover:text-secondary-600 text-black cursor-pointer select-none`}>View All</div>
-            </div>
+            </div>}
             <div>
                 <Grid.Container gap={2} justify="flex-start">
                     {topProducts.map((item, index) => (
