@@ -27,9 +27,9 @@ const Home = ({serverData, error}) => {
                         onNextSlideClick={nextSlide}
             />
             <Spacer y={3}/>
-            <LatestProduct title={`Latest Products`} latestProducts={latestProducts}/>
+            <LatestProduct wrapperClass={`containerDiv`} title={`Latest Products`} latestProducts={latestProducts}/>
             <Spacer y={5}/>
-            <TopProduct title={`Top Products`} topProducts={latestProducts}/>
+            <TopProduct wrapperClass={`containerDiv`} title={`Top Products`} topProducts={latestProducts}/>
         </Layout>
     )
 }

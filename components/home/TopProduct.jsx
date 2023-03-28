@@ -1,10 +1,10 @@
 import {Card, Grid, Row, Text} from "@nextui-org/react";
 import React from "react";
 
-const TopProduct = ({topProducts, title}) => {
+const TopProduct = ({topProducts, title, wrapperClass}) => {
 
     return (
-        <div className={`containerDiv px-4 flex flex-col`}>
+        <div className={`${wrapperClass} px-4 flex flex-col`}>
             {title && <div className={`flex items-center justify-between px-4`}>
                 <div><Text h2>Top Products</Text></div>
                 <div className={`text-sm hover:text-secondary-600 text-black cursor-pointer select-none`}>View All</div>
