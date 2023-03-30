@@ -3,7 +3,7 @@ import {Spacer, Text} from "@nextui-org/react";
 
 const Footer = ({children}) => {
     return (
-        <div className={`footerWrapper`}>
+        <div className={`footerWrapper relative bottom-0 w-full`}>
             <div className={`footerContainer flex justify-center items-center px-6 py-10`}>
                 <div className={`text-4xl select-none cursor-pointer text-black flex-auto font-semibold`}>THAMELMART</div>
 
