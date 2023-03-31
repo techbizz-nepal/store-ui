@@ -13,13 +13,13 @@ const TopProduct = ({topProducts, title, wrapperClass}) => {
                 <Grid.Container gap={2} justify="flex-start">
                     {topProducts.map((item, index) => (
                         <Grid xs={6} sm={3} key={index}>
-                            <Card isPressable>
+                            <Card isPressable onPress={() => router.push('/' + item.slug)}>
                                 <Card.Body css={{p: 0}}>
                                     <Card.Image
                                         src={"https://nextui.org" + item.img}
                                         objectFit="cover"
                                         width="100%"
-                                        height={140}
+                                        height={240}
                                         alt={item.title}
                                     />
                                 </Card.Body>

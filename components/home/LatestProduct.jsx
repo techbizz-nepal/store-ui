@@ -22,7 +22,7 @@ const LatestProduct = ({latestProducts, title, wrapperClass}) => {
                                         src={"https://nextui.org" + item.img}
                                         objectFit="cover"
                                         width="100%"
-                                        height={140}
+                                        height={240}
                                         alt={item.title}
                                     />
                                 </Card.Body>

@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import React, {useState} from "react";
+import React from "react";
 import Head from "next/head";
 import HeroSlider from "../components/home/HeroSlider";
 import useSliderAction from "../hooks/useSliderAction";

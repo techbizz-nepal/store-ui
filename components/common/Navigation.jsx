@@ -78,6 +78,7 @@ function Navigation() {
                     <div className={` cursor-pointer hover:bg-highlight hover:text-white pr-6 py-4 px-4`}>
                         <BiCart
                             className={`text-2xl`} onClick={handleCartClick} />
+
                     </div>
                     <div className={`flex items-center gap-x-1 cursor-pointer hover:bg-highlight hover:text-white pr-6 py-4 px-4`} onClick={handleLoginClick}>
                         <BiLogIn
