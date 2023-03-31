@@ -1,12 +1,8 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {useRouter} from "next/router";
 import Layout from "../components/Layout";
 import Head from "next/head";
 import BreadcrumbNew from "../components/common/BreadcrumbNew";
-import {Button} from "@nextui-org/react";
-import Image from "next/image";
-import {FaShoppingCart} from "react-icons/fa";
-import {toast} from "react-toastify";
 import * as PropTypes from "prop-types";
 import ProductDetail from "../components/abstract/ProductDetail";
 
