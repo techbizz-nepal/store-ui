@@ -3,6 +3,7 @@
     --primary: #94a3b8;
     --secondary: #f1f5f9;
 }
+
 /* Firefox */
 * {
     scrollbar-width: thin;
@@ -24,20 +25,14 @@
     border-radius: 10px;
     border: 2px solid var(--primary);
 }
+
 @tailwind components;
 @tailwind utilities;
 
 @layer utilities {
-    .sectionDiv {
-        @apply flex flex-col gap-y-20 py-20 container mx-auto
-    }
 
     .headerText {
         @apply text-xl uppercase text-center text-white font-bold
-    }
-
-    .containerDiv {
-        @apply container mx-auto w-full px-4 lg:px-48
     }
 
     .inputDiv {
@@ -59,18 +54,23 @@
     .text-action {
         @apply text-neutral-700
     }
-    .footerWrapper{
+
+    .containerDivPadding {
+        @apply px-4 lg:px-20
+    }
+
+    .containerDiv {
+        @apply container mx-auto w-full containerDivPadding
+    }
+
+    .footerSection {
         @apply bg-neutral-200 text-white text-lg
     }
-    .footerContainer{
-        @apply container mx-auto w-full px-4 lg:px-48
-    }
-    .navigationWrapper{
+
+    .navigationSection {
         @apply bg-main text-white text-lg
     }
-    .navigationContainer{
-        @apply container mx-auto w-full flex items-center justify-between text-2xl sm:text-sm lg:text-lg font-light font-semibold px-4 lg:px-48
-    }
+
     .singleDepartmentWrapper {
         @apply flex-none flex-col gap-y-3 bg-neutral-200 overflow-y-auto text-white shadow-lg
     }
@@ -78,7 +78,6 @@
     .singleDepartmentDiv {
         @apply py-4 px-6 cursor-pointer hover:bg-primary-700 sm:w-64 md:w-80  text-black hover:text-white
     }
-
 
 
 }

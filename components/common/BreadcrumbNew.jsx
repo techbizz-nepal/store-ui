@@ -3,7 +3,7 @@ import {AiFillHome} from "react-icons/ai";
 import {RxCaretRight} from "react-icons/rx";
 import {useRouter} from "next/router";
 
-const BreadcrumbNew = ({divider}) => {
+const BreadcrumbNew = () => {
     const router = useRouter()
     return <div id={`breadCrumb`}
                 className={`flex items-center justify-start containerDiv gap-x-4 px-2 py-10`}>

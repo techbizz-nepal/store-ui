@@ -1,25 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {useRouter} from "next/router";
 import Layout from "../components/Layout";
 import Head from "next/head";
 import BreadcrumbNew from "../components/common/BreadcrumbNew";
 import * as PropTypes from "prop-types";
 import ProductDetail from "../components/abstract/ProductDetail";
+import useLatestProducts from "../hooks/useLatestProducts";
+import productDetail from "../components/abstract/ProductDetail";
+import {Loading} from "@nextui-org/react";
 
 ProductDetail.propTypes = {productDetail: PropTypes.shape({imageSrc: PropTypes.string, pageName: PropTypes.string})};
 const AbstractProductDetail = () => {
+    const {getProductBySlug} = useLatestProducts()
     const router = useRouter()
     const {abstractId} = router.query
-    const pageName = abstractId?.toString().replaceAll('-', ' ').toUpperCase().substring(0, 20)
-    const productDetail = {
-        pageName,
-        "imageSrc": 'https://images.unsplash.com/photo-1520564816385-4f9d711941aa?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-    }
+    const product = getProductBySlug(abstractId)
+    if(product === undefined) return <h1>Product not found!</h1>
     return (
         <Layout>
-            <Head><title>{productDetail.pageName}</title></Head>
-            <BreadcrumbNew divider={`>`}/>
-            <ProductDetail productDetail={productDetail}/>
+            <Head><title>{product?.title}</title></Head>
+            <BreadcrumbNew/>
+            <ProductDetail product={product}/>
         </Layout>
     );
 };

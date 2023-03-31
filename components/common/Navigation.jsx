@@ -45,9 +45,9 @@ function Navigation() {
     }
     if (!navigations.length) return null
     return (
-        <div className={`navigationWrapper sticky top-0 z-50` } id={`navigationWrapper`}>
+        <div className={`navigationSection sticky top-0 z-50` } id={`navigationWrapper`}>
             <div
-                className={`navigationContainer`}
+                className={`containerDiv flex items-center justify-between text-2xl sm:text-sm lg:text-lg font-light`}
                 id={`navigationContainer`}>
 
                 {/* Sidebar button */}
