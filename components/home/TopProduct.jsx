@@ -1,8 +1,9 @@
 import {Card, Grid, Row, Text} from "@nextui-org/react";
 import React from "react";
+import {useRouter} from "next/router";
 
 const TopProduct = ({topProducts, title, wrapperClass}) => {
-
+    const router = useRouter()
     return (
         <div className={`${wrapperClass} px-4 flex flex-col`}>
             {title && <div className={`flex items-center justify-between px-4`}>
