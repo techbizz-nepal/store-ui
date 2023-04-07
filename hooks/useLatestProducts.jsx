@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 const useLatestProducts = () => {
     const [latestProducts, setLatestProducts] = useState([
         {
-            title: "Orange",
+            title: "Orange Orange Orange Orange Orange ",
             slug: "orange",
             img: "/images/fruit-1.jpeg",
             price: "$5.50",
@@ -51,7 +51,10 @@ const useLatestProducts = () => {
             price: "$12.20",
         },
     ]);
-    return {latestProducts}
+    const getProductBySlug = slug => {
+        return latestProducts.find(product => product.slug === slug)
+    }
+    return {latestProducts, getProductBySlug}
 };
 
 export default useLatestProducts;

@@ -30,8 +30,10 @@ export const DepartmentContextProvider = ({children}) => {
         }
         loadDepartments().then(r => r)
     }, []);
-
-    const context = {departmentsArray, loading, error}
+    const getDepartmentByValue = value => {
+        return departmentsArray.find(department => department.value === value)
+    }
+    const context = {departmentsArray, getDepartmentByValue, loading, error}
     return (
         <DepartmentContext.Provider value={context}>
             {children}

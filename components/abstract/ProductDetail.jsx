@@ -2,9 +2,9 @@ import React, {useState} from "react";
 import {toast} from "react-toastify";
 import Image from "next/image";
 import {Button} from "@nextui-org/react";
-import {FaShoppingCart} from "react-icons/fa";
+import {FaShoppingCart, FaPlayCircle} from "react-icons/fa";
 
-const ProductDetail = ({productDetail}) => {
+const ProductDetail = ({product}) => {
     const [quantity, setQuantity] = useState(1);
     const addToCartToastId = React.useRef(null)
     const [decrementEffect, setDecrementEffect] = useState(false);
@@ -25,19 +25,19 @@ const ProductDetail = ({productDetail}) => {
     return <div id={`content`}
                 className={`containerDiv flex flex-col items-center md:flex-row justify-start gap-x-4 `}>
 
-        <div id={`image`} className={`flex-1 relative `}>
+        <div id={`image`} className={`basis-2/3 relative `}>
             <Image
-                alt={productDetail.pageName}
-                src={productDetail.imageSrc}
+                alt={product.title}
+                src={"https://nextui.org" + product.img}
                 width={1440} height={764}/>
         </div>
 
 
         <div id={`detailAction`}
-             className={`flex flex-col items-center gap-y-10 flex-none p-4 rounded-tl-3xl rounded-br-3xl shadow-xl bg-action-50 dark:bg-neutral-800 dark:text-white`}>
-            <div id={`title`} className={`text-3xl font-medium`}>{productDetail.pageName}</div>
+             className={`flex flex-col basis-1/3 items-center gap-y-10 flex-none p-4 rounded-tl-3xl rounded-br-3xl shadow-xl bg-action-50 dark:bg-neutral-800 dark:text-white`}>
+            <div id={`title`} className={`text-3xl font-medium`}>{product.title}</div>
             <div id={`price`} className="text-7xl font-semibold">$10</div>
-            <div id={`quantity`} className={`flex flex-col gap-y-4`}>
+            <div id={`quantity`} className={`flex flex-col gap-y-2 items-center`}>
                 <div id={`quantityLabel`} className={`text-lg font-extralight`}>Quantity</div>
                 <div id={`quantityAction`} className="flex gap-x-6 items-center text-2xl">
                     <div
@@ -53,9 +53,15 @@ const ProductDetail = ({productDetail}) => {
                     </div>
                 </div>
             </div>
-            <div id={`addToCartBtn`}>
-                <Button onPress={handleAddToCartAction} size={`lg`}
-                        icon={<FaShoppingCart className={`text-white`}/>}>Add to Cart</Button>
+            <div id={`actions`} className={`flex flex-col gap-y-2`}>
+                <div id={`previewBtn`}>
+                    <Button onPress={handleAddToCartAction} size={`lg`}
+                            icon={<FaPlayCircle className={`text-white`}/>}>Preview</Button>
+                </div>
+                <div id={`addToCartBtn`}>
+                    <Button onPress={handleAddToCartAction} size={`lg`}
+                            icon={<FaShoppingCart className={`text-white`}/>}>Add to Cart</Button>
+                </div>
             </div>
         </div>
     </div>
