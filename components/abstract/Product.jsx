@@ -4,10 +4,10 @@ import ProductAction from "./ProductAction";
 import useAbstractActions from "../../hooks/abstract/useAbstractActions";
 
 const ProductDescription = ({wrapper}) => {
-    return <h1 className={`text-2xl`}>ProductDescription</h1>
+    return <h3 className={`text-md font-light`}>Description</h3>
 }
 const ProductDetail = ({wrapper}) => {
-    return <h1 className={`text-2xl`}>ProductDetail</h1>
+    return <h3 className={`text-md font-light`}>Detail</h3>
 }
 const Product = ({product}) => {
     const {

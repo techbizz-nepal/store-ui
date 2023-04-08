@@ -2,7 +2,7 @@ import React from 'react';
 import {useRouter} from "next/router";
 import Head from "next/head";
 import Layout from "../../components/Layout";
-import {Collapse, Text} from "@nextui-org/react";
+import {Button, Collapse, Spacer, Text} from "@nextui-org/react";
 import LatestProduct from "../../components/home/LatestProduct";
 import useLatestProducts from "../../hooks/common/useLatestProducts";
 import BreadcrumbNew from "../../components/common/BreadcrumbNew";
@@ -49,6 +49,10 @@ const Category = () => {
                         </Collapse>
 
                     </Collapse.Group>
+                    <Spacer y={2} />
+                    <div className={`flex`} >
+                        <Button>Filter</Button>
+                    </div>
                 </div>
                 <div id={`contentSide`} className={`flex flex-col gap-y-6 w-full px-4 py-2`}>
                     <div id={`constraint`} className={`flex justify-between items-center px-4 py-2 text-sm`}>
