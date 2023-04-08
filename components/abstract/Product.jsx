@@ -3,11 +3,21 @@ import ImageBox from "./ImageBox";
 import ProductAction from "./ProductAction";
 import useAbstractActions from "../../hooks/abstract/useAbstractActions";
 
-const ProductDescription = ({wrapper}) => {
-    return <h3 className={`text-md font-light`}>Description</h3>
+const ProductDescription = ({wrapper: {id, classes}}) => {
+    return <div className={classes} id={id}>
+        <h3 className={`text-md font-extralight`}>Description</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus hic sint? Assumenda, dolore id
+            magnam maiores quibusdam repellendus sunt tempore vel voluptas? Consequuntur eius fugiat hic itaque, rerum
+            sint?</p>
+    </div>
 }
-const ProductDetail = ({wrapper}) => {
-    return <h3 className={`text-md font-light`}>Detail</h3>
+const ProductDetail = ({wrapper: {id, classes}}) => {
+    return <div className={classes} id={id}>
+        <h3 className={`text-md font-extralight`}>Detail</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus hic sint? Assumenda, dolore id
+            magnam maiores quibusdam repellendus sunt tempore vel voluptas? Consequuntur eius fugiat hic itaque, rerum
+            sint?</p>
+    </div>
 }
 const Product = ({product}) => {
     const {
@@ -42,12 +52,12 @@ const Product = ({product}) => {
                 handleAddToCartAction={handleAddToCartAction}/>
         </div>
         <div id={`informationWrapper`}
-             className={`flex flex-col items-center md:flex-row justify-between gap-y-2 md:gap-x-4`}>
+             className={`flex flex-col items-center md:flex-row justify-start gap-y-2 md:gap-x-4`}>
             <ProductDescription wrapper={{
-                id: `productDescription`, classes: `flex flex-col basis-1/3 items-center gap-y-10 flex-none p-4`
+                id: `productDescription`, classes: `flex flex-col basis-1/2 gap-y-3 flex-none p-4`
             }}/>
             <ProductDetail wrapper={{
-                id: `productDetail`, classes: `flex flex-col basis-1/3 items-center gap-y-10 flex-none p-4`
+                id: `productDetail`, classes: `flex flex-col basis-1/2 gap-y-3 flex-none p-4`
             }}/>
         </div>
     </div>
