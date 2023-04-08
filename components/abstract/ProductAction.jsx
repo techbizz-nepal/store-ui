@@ -3,6 +3,7 @@ import {Button} from "@nextui-org/react";
 import {FaPlayCircle, FaShoppingCart} from "react-icons/fa";
 
 const ProductAction = ({
+                           wrapper: {id, classes},
                            product,
                            setIncrementEffect,
                            setDecrementEffect,
@@ -14,7 +15,7 @@ const ProductAction = ({
                            quantity
                        }) => {
     return (
-        <>
+        <div id={id} className={classes}>
             <div id={`title`} className={`text-3xl font-medium`}>{product.title}</div>
             <div id={`price`} className="text-7xl font-semibold">{product?.price ?? 'N/A'}</div>
             <div id={`quantity`} className={`flex flex-col gap-y-2 items-center`}>
@@ -51,7 +52,7 @@ const ProductAction = ({
                             icon={<FaShoppingCart className={`text-white`}/>}>Add to Cart</Button>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

@@ -4,7 +4,7 @@ import Head from "next/head";
 import Layout from "../../components/Layout";
 import {Collapse, Text} from "@nextui-org/react";
 import LatestProduct from "../../components/home/LatestProduct";
-import useLatestProducts from "../../hooks/useLatestProducts";
+import useLatestProducts from "../../hooks/common/useLatestProducts";
 import BreadcrumbNew from "../../components/common/BreadcrumbNew";
 import {useDepartmentContext} from "../../contexts/department";
 

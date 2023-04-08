@@ -2,11 +2,11 @@ import Layout from "../components/Layout";
 import React from "react";
 import Head from "next/head";
 import HeroSlider from "../components/home/HeroSlider";
-import useSliderAction from "../hooks/useSliderAction";
+import useSliderAction from "../hooks/home/useSliderAction";
 import {Spacer} from "@nextui-org/react";
 import LatestProduct from "../components/home/LatestProduct";
 import TopProduct from "../components/home/TopProduct";
-import useLatestProducts from "../hooks/useLatestProducts";
+import useLatestProducts from "../hooks/common/useLatestProducts";
 
 const Home = ({serverData, error}) => {
     const {currentIndex, slides, prevSlide, nextSlide, goToSlide} = useSliderAction()
