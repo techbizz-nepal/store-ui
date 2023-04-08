@@ -4,12 +4,12 @@ import Layout from "../components/Layout";
 import Head from "next/head";
 import BreadcrumbNew from "../components/common/BreadcrumbNew";
 import * as PropTypes from "prop-types";
-import ProductDetail from "../components/abstract/ProductDetail";
+import Product from "../components/abstract/Product";
 import useLatestProducts from "../hooks/useLatestProducts";
-import productDetail from "../components/abstract/ProductDetail";
+import productDetail from "../components/abstract/Product";
 import {Loading} from "@nextui-org/react";
 
-ProductDetail.propTypes = {productDetail: PropTypes.shape({imageSrc: PropTypes.string, pageName: PropTypes.string})};
+Product.propTypes = {productDetail: PropTypes.shape({imageSrc: PropTypes.string, pageName: PropTypes.string})};
 const AbstractProductDetail = () => {
     const {getProductBySlug} = useLatestProducts()
     const router = useRouter()
@@ -20,7 +20,7 @@ const AbstractProductDetail = () => {
         <Layout>
             <Head><title>{product?.title}</title></Head>
             <BreadcrumbNew/>
-            <ProductDetail product={product}/>
+            <Product product={product}/>
         </Layout>
     );
 };
