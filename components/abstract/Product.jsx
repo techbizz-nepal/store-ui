@@ -21,7 +21,7 @@ const Product = ({product}) => {
         handleAddToCartAction
     } = useAbstractActions()
     return <div id={`productWrapper`}
-                className={`containerDiv flex flex-col gap-2`}>
+                className={`containerDiv flex flex-col gap-10`}>
 
         <div id={`actionWrapper`}
              className={`flex flex-col items-center md:flex-row justify-start gap-y-2 md:gap-x-4`}>
