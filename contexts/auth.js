@@ -1,13 +1,12 @@
 import {createContext, useContext, useEffect, useState} from "react";
-import router, {useRouter} from "next/router";
+import {useRouter} from "next/router";
 import api from "../utils/api";
 import {toast} from "react-toastify";
 import Cookies from 'js-cookie'
 import axios from "axios";
-// import LoaderComponent from "../components/common/LoaderComponent";
 import Skeleton from "react-loading-skeleton";
 import 'react-loading-skeleton/dist/skeleton.css'
-import Layout from "../layouts/Layout";
+import useRequestPath from "../hooks/common/useRequestPath";
 
 const AuthContext = createContext({
     user: null,
@@ -22,11 +21,12 @@ export const AuthContextProvider = ({children}) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true)
     const router = useRouter()
+    const {getUser, loginPath, logoutPath} = useRequestPath()
     const loginToast = 'login'
 
     useEffect(() => {
         async function loadUserFromCookies() {
-            await api().get(`/user`)
+            await api().get(getUser)
                 .then(({data}) => {
                     if (!data[0].error) {
                         setUser(data[1].user)
@@ -44,7 +44,7 @@ export const AuthContextProvider = ({children}) => {
 
     const login = async (data) => {
         await axios.get(`${process.env.host}/api/csrf-cookie`).then(response => {
-            api().post(`/v1/auth/login`, data)
+            api().post(loginPath, data)
                 .then(({data}) => {
                     if (!data[0].error) {
                         const {token, user} = data[1]
@@ -71,7 +71,7 @@ export const AuthContextProvider = ({children}) => {
          * **/
     }
     const logout = () => {
-        api().get(`v1/auth/logout`).then(({data}) => {
+        api().get(logoutPath).then(({data}) => {
             if (!data[1].error) {
                 setUser(null)
                 window.location.pathname = '/'

@@ -1,5 +1,6 @@
 import {createContext, useContext, useEffect, useState} from "react";
 import api from "../utils/api";
+import useRequestPath from "../hooks/common/useRequestPath";
 
 const DepartmentContext = createContext({departmentsArray: []})
 
@@ -7,11 +8,12 @@ export const DepartmentContextProvider = ({children}) => {
     const [departmentsArray, setDepartmentsArray] = useState([]);
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState()
+    const{getNestedCategory} = useRequestPath()
 
     useEffect(() => {
         const loadDepartments = async () => {
             await api()
-                .get(`/v1/admin/getNestedCategory`)
+                .get(getNestedCategory)
                 .then(
                     ({data}) => {
                         // if (!data[0].error) {
