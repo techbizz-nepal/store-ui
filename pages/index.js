@@ -29,6 +29,8 @@ const Home = ({serverData, error}) => {
             <LatestProduct wrapperClass={`containerDiv`} title={`Latest Products`} latestProducts={latestProducts}/>
             <Spacer y={5}/>
             <LatestProduct wrapperClass={`containerDiv`} title={`Top Products`} latestProducts={latestProducts}/>
+            <Spacer y={5}/>
+            <LatestProduct wrapperClass={`containerDiv`} title={`Hot Products`} latestProducts={latestProducts}/>
         </Layout>
     )
 }

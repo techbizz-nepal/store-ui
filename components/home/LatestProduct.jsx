@@ -8,7 +8,7 @@ const LatestProduct = ({latestProducts, title, wrapperClass}) => {
         <div className={`${wrapperClass} px-4 flex flex-col`}>
             {
                 title && <div className={`flex items-center justify-between px-4`}>
-                    <div><Text h2>Latest Deals</Text></div>
+                    <div><Text h2>{title}</Text></div>
                     <div className={`text-sm hover:text-secondary-600 text-black cursor-pointer select-none`}>View All</div>
                 </div>
             }
