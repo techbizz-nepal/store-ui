@@ -30,7 +30,7 @@ const Product = ({product}) => {
                 className={`containerDiv flex flex-col gap-10`}>
 
         <div id={`actionWrapper`}
-             className={`flex flex-col items-start md:flex-row justify-start gap-y-2 md:gap-x-4`}>
+             className={`flex flex-col items-center md:items-start md:flex-row justify-start gap-y-2 md:gap-x-4`}>
             <ImageBox wrapper={{id: `productImageBox`, classes: `basis-2/3 relative`}}
                       product={product}
                       imageHost={`https://nextui.org`}/>
