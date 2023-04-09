@@ -43,6 +43,7 @@ const useLatestProducts = () => {
             slug: "banana",
             img: "/images/fruit-7.jpeg",
             price: "$7.50",
+            sound:'',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.'
         },
         {

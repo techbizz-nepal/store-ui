@@ -14,7 +14,7 @@ const LatestProduct = ({latestProducts, title, wrapperClass}) => {
             }
             <div>
                 <Grid.Container gap={2} justify="flex-start">
-                    {latestProducts.map((item, index) => (
+                    {latestProducts && latestProducts.map((item, index) => (
                         <Grid xs={6} sm={3} key={index}>
                             <Card isPressable onPress={() => router.push('/' + item.slug)}>
                                 <Card.Body css={{p: 0}}>

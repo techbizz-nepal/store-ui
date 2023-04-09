@@ -8,10 +8,11 @@ import {Loading, Spacer} from "@nextui-org/react";
 import Footer from "./common/Footer";
 import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Loader from "./common/Loader";
 
 function Layout({children}) {
     const {departmentsArray, loading, error} = useDepartmentContext()
-    if (loading) return <Loading size="xl"/>
+    if (loading) return <Loader/>
     if (error) return <h1>Error occurred: {error}</h1>
     return (
         <>

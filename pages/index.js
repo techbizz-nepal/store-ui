@@ -5,7 +5,6 @@ import HeroSlider from "../components/home/HeroSlider";
 import useSliderAction from "../hooks/home/useSliderAction";
 import {Spacer} from "@nextui-org/react";
 import LatestProduct from "../components/home/LatestProduct";
-import TopProduct from "../components/home/TopProduct";
 import useLatestProducts from "../hooks/common/useLatestProducts";
 
 const Home = ({serverData, error}) => {
@@ -29,7 +28,7 @@ const Home = ({serverData, error}) => {
             <Spacer y={3}/>
             <LatestProduct wrapperClass={`containerDiv`} title={`Latest Products`} latestProducts={latestProducts}/>
             <Spacer y={5}/>
-            <TopProduct wrapperClass={`containerDiv`} title={`Top Products`} topProducts={latestProducts}/>
+            <LatestProduct wrapperClass={`containerDiv`} title={`Top Products`} latestProducts={latestProducts}/>
         </Layout>
     )
 }
