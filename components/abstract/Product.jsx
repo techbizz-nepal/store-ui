@@ -3,20 +3,16 @@ import ImageBox from "./ImageBox";
 import ProductAction from "./ProductAction";
 import useAbstractActions from "../../hooks/abstract/useAbstractActions";
 
-const ProductDescription = ({wrapper: {id, classes}}) => {
+const ProductDescription = ({wrapper: {id, classes}, product}) => {
     return <div className={classes} id={id}>
         <h3 className={`text-md font-extralight`}>Description</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus hic sint? Assumenda, dolore id
-            magnam maiores quibusdam repellendus sunt tempore vel voluptas? Consequuntur eius fugiat hic itaque, rerum
-            sint?</p>
+        <p>{product?.description}</p>
     </div>
 }
-const ProductDetail = ({wrapper: {id, classes}}) => {
+const ProductDetail = ({wrapper: {id, classes}, product}) => {
     return <div className={classes} id={id}>
         <h3 className={`text-md font-extralight`}>Detail</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque ducimus hic sint? Assumenda, dolore id
-            magnam maiores quibusdam repellendus sunt tempore vel voluptas? Consequuntur eius fugiat hic itaque, rerum
-            sint?</p>
+        <p>{product?.detail}</p>
     </div>
 }
 const Product = ({product}) => {
@@ -34,7 +30,7 @@ const Product = ({product}) => {
                 className={`containerDiv flex flex-col gap-10`}>
 
         <div id={`actionWrapper`}
-             className={`flex flex-col items-center md:flex-row justify-start gap-y-2 md:gap-x-4`}>
+             className={`flex flex-col items-start md:flex-row justify-start gap-y-2 md:gap-x-4`}>
             <ImageBox wrapper={{id: `productImageBox`, classes: `basis-2/3 relative`}}
                       product={product}
                       imageHost={`https://nextui.org`}/>
@@ -52,11 +48,11 @@ const Product = ({product}) => {
                 handleAddToCartAction={handleAddToCartAction}/>
         </div>
         <div id={`informationWrapper`}
-             className={`flex flex-col items-center md:flex-row justify-start gap-y-2 md:gap-x-4`}>
-            <ProductDescription wrapper={{
+             className={`flex flex-col items-start md:flex-row justify-start gap-y-2 md:gap-x-4`}>
+            <ProductDescription product={product} wrapper={{
                 id: `productDescription`, classes: `flex flex-col basis-1/2 gap-y-3 flex-none p-4`
             }}/>
-            <ProductDetail wrapper={{
+            <ProductDetail product={product} wrapper={{
                 id: `productDetail`, classes: `flex flex-col basis-1/2 gap-y-3 flex-none p-4`
             }}/>
         </div>
