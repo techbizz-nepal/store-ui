@@ -15,7 +15,7 @@ function Layout({children}) {
     if (loading) return <Loader/>
     if (error) return <h1>Error occurred: {error}</h1>
     return (
-        <>
+        <div id={`rootDiv`} className={`flex flex-col w-screen h-screen`}>
             {/*<InfoHeader></InfoHeader>*/}
             <MainHeader></MainHeader>
             <Navigation/>
@@ -33,7 +33,7 @@ function Layout({children}) {
                 theme="dark"
                 limit={3}
             />
-        </>
+        </div>
     );
 }
 

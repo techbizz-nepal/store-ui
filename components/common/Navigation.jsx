@@ -6,6 +6,7 @@ import {useRouter} from "next/router";
 import {BiCart, BiLogIn} from "react-icons/bi";
 import AuthModal from "./AuthModal";
 import {Portal} from "../Portal";
+import useWindowSize from "./useWindowSize";
 
 const SidebarButton = ({setIsOpen, isOpen}) => {
     return (
@@ -21,6 +22,7 @@ const SidebarButton = ({setIsOpen, isOpen}) => {
 }
 
 function Navigation() {
+    const [width, height] = useWindowSize();
     const router = useRouter()
     const {isOpen, setIsOpen} = useSidebarContext()
     const [navigations, setNavigations] = useState([
@@ -61,7 +63,7 @@ function Navigation() {
                 </div>
 
                 {/*Page navigation*/}
-                <div className={`flex gap-x-5 `}>
+                {width >= 650 && <div className={`flex gap-x-5 `}>
                     {navigations.map(navigation => (
                         <div key={navigation.id}
                              onClick={() => router.push(navigation.path)}
@@ -69,22 +71,24 @@ function Navigation() {
                         </div>
                     ))}
 
-                </div>
+                </div>}
 
                 {/*login and cart div section*/}
-                <div
-                    className={`flex items-center lg:text-lg gap-x-4 text-white md:text-md lg:text-lg`}>
+                {
+                    width >= 650 && <div
+                        className={`flex items-center lg:text-lg gap-x-4 text-white md:text-md lg:text-lg`}>
 
-                    <div className={` cursor-pointer hover:bg-highlight hover:text-white pr-6 py-4 px-4`}>
-                        <BiCart
-                            className={`text-2xl`} onClick={handleCartClick} />
+                        <div className={` cursor-pointer hover:bg-highlight hover:text-white pr-6 py-4 px-4`}>
+                            <BiCart
+                                className={`text-2xl`} onClick={handleCartClick} />
 
+                        </div>
+                        <div className={`flex items-center gap-x-1 cursor-pointer hover:bg-highlight hover:text-white pr-6 py-4 px-4`} onClick={handleLoginClick}>
+                            <BiLogIn
+                                className={`text-2xl`}/> Login
+                        </div>
                     </div>
-                    <div className={`flex items-center gap-x-1 cursor-pointer hover:bg-highlight hover:text-white pr-6 py-4 px-4`} onClick={handleLoginClick}>
-                        <BiLogIn
-                            className={`text-2xl`}/> Login
-                    </div>
-                </div>
+                }
 
             </div>
             <Portal>
