@@ -1,9 +1,7 @@
-import React, {useState} from 'react';
-import Image from 'next/image';
-import {BiCart, BiLogIn} from "react-icons/bi";
+"use client"
+
+import React from 'react';
 import HeaderSearchInput from "./HeaderSearchInput";
-import AuthModal from "./AuthModal";
-import {Portal} from "../Portal";
 import {useRouter} from "next/router";
 import {MdSupportAgent} from "react-icons/md";
 

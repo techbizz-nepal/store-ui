@@ -1,4 +1,5 @@
-import React, {useRef, useState} from 'react';
+"use client"
+import React from 'react';
 import {useSidebarContext} from "../../contexts/sidebarContext";
 import {useRouter} from "next/router";
 

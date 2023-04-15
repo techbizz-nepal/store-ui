@@ -1,5 +1,5 @@
 import React from 'react';
-import {useRouter} from "next/router";
+import {useRouter} from "next/navigation";
 import Head from "next/head";
 import Layout from "../../components/Layout";
 import {Button, Collapse, Spacer, Text} from "@nextui-org/react";
