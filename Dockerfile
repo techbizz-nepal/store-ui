@@ -1,7 +1,5 @@
 FROM node:latest
 
-RUN mkdir -p /store
-
 # Copying source files
 # COPY . /app
 
@@ -9,9 +7,10 @@ RUN mkdir -p /store
 # COPY package*.json /store
 
 WORKDIR /store
+
 # VOLUME [ "/app" ]
 # RUN yarn
-
+RUN yarn global add npm-check-updates
 # Building app
 # RUN npm run build --production
 # EXPOSE 3000
