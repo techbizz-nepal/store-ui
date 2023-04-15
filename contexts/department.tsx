@@ -1,14 +1,18 @@
-import {createContext, useContext, useEffect, useState} from "react";
+import React, {createContext, FC, useContext, useEffect, useState} from "react";
 import api from "../utils/api";
 import useRequestPath from "../hooks/common/useRequestPath";
 
-const DepartmentContext = createContext({departmentsArray: []})
+interface IDepartmentArray {
+    [index: number]: { id: string, label: string, children_array: [] }
+}
 
-export const DepartmentContextProvider = ({children}) => {
-    const [departmentsArray, setDepartmentsArray] = useState([]);
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState()
-    const{getNestedCategory} = useRequestPath()
+const DepartmentContext = createContext({})
+
+export const DepartmentContextProvider: React.FC<any> = ({children}) => {
+    const [departmentsArray, setDepartmentsArray] = useState<IDepartmentArray>();
+    const [loading, setLoading] = useState<boolean>(true)
+    const [error, setError] = useState<{}>()
+    const {getNestedCategory} = useRequestPath()
 
     useEffect(() => {
         const loadDepartments = async () => {
@@ -16,8 +20,7 @@ export const DepartmentContextProvider = ({children}) => {
                 .get(getNestedCategory)
                 .then(
                     ({data}) => {
-                        // if (!data[0].error) {
-                        setDepartmentsArray([...data[1].categories].slice(0, 18))
+                        setDepartmentsArray([...data[1].categories])
                         setLoading(false)
                         // }
                     },
@@ -32,8 +35,8 @@ export const DepartmentContextProvider = ({children}) => {
         }
         loadDepartments().then(r => r)
     }, []);
-    const getDepartmentByValue = value => {
-        return departmentsArray.find(department => department.value === value)
+    const getDepartmentByValue: FC<string> = value => {
+        return Array.isArray(departmentsArray) && departmentsArray.find(department => department.value === value)
     }
     const context = {departmentsArray, getDepartmentByValue, loading, error}
     return (
