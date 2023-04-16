@@ -9,7 +9,6 @@ import useLatestProducts from "../hooks/common/useLatestProducts";
 import productDetail from "../components/abstract/Product";
 import {Loading} from "@nextui-org/react";
 
-Product.propTypes = {productDetail: PropTypes.shape({imageSrc: PropTypes.string, pageName: PropTypes.string})};
 const AbstractProductDetail = () => {
     const {getProductBySlug} = useLatestProducts()
     const router = useRouter()

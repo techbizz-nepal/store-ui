@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button} from "@nextui-org/react";
 import {FaPlayCircle, FaShoppingCart} from "react-icons/fa";
+import {IProductActionProps} from "../../TS/interfaces";
 
 const ProductAction = ({
                            wrapper: {id, classes},
@@ -13,7 +14,7 @@ const ProductAction = ({
                            handleQuantityDecrement,
                            handleAddToCartAction,
                            quantity
-                       }) => {
+                       }: IProductActionProps) => {
     return (
         <div id={id} className={classes}>
             <div id={`title`} className={`text-3xl font-medium`}>{product.title}</div>

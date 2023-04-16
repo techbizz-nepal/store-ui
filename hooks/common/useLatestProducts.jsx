@@ -8,7 +8,7 @@ const useLatestProducts = () => {
             img: "/images/fruit-1.jpeg",
             price: "$5.50",
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.',
-            details: [['key', 'value'], ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]
+            details: [{label:'key', value:'value'}, {label:'key1', value:'value1'}, {label:'key2', value:'value2'}, {label:'key3', value:'value3'}]
         },
         {
             title: "Tangerine",
@@ -16,7 +16,7 @@ const useLatestProducts = () => {
             img: "/images/fruit-2.jpeg",
             price: "$3.00",
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.',
-            details: [['key', 'value'], ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]
+            details: [{label:'key', value:'value'}, {label:'key1', value:'value1'}, {label:'key2', value:'value2'}, {label:'key3', value:'value3'}]
 
         },
         {
@@ -25,7 +25,7 @@ const useLatestProducts = () => {
             img: "/images/fruit-3.jpeg",
             price: "$10.00",
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.',
-            details: [['key', 'value'], ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]
+            details: [{label:'key', value:'value'}, {label:'key1', value:'value1'}, {label:'key2', value:'value2'}, {label:'key3', value:'value3'}]
 
         },
         {
@@ -34,7 +34,7 @@ const useLatestProducts = () => {
             img: "/images/fruit-4.jpeg",
             price: "$5.30",
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.',
-            details: [['key', 'value'], ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]
+            details: [{label:'key', value:'value'}, {label:'key1', value:'value1'}, {label:'key2', value:'value2'}, {label:'key3', value:'value3'}]
 
         },
         {
@@ -43,7 +43,7 @@ const useLatestProducts = () => {
             img: "/images/fruit-5.jpeg",
             price: "$15.70",
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.',
-            details: [['key', 'value'], ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]
+            details: [{label:'key', value:'value'}, {label:'key1', value:'value1'}, {label:'key2', value:'value2'}, {label:'key3', value:'value3'}]
 
         },
         {
@@ -52,7 +52,7 @@ const useLatestProducts = () => {
             img: "/images/fruit-6.jpeg",
             price: "$8.00",
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.',
-            details: [['key', 'value'], ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]
+            details: [{label:'key', value:'value'}, {label:'key1', value:'value1'}, {label:'key2', value:'value2'}, {label:'key3', value:'value3'}]
 
         },
         {
@@ -62,7 +62,7 @@ const useLatestProducts = () => {
             price: "$7.50",
             sound: '',
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.',
-            details: [['key', 'value'], ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]
+            details: [{label:'key', value:'value'}, {label:'key1', value:'value1'}, {label:'key2', value:'value2'}, {label:'key3', value:'value3'}]
         },
         {
             title: "Watermelon",
@@ -70,7 +70,7 @@ const useLatestProducts = () => {
             img: "/images/fruit-8.jpeg",
             price: "$12.20",
             description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad adipisci asperiores debitis dicta dolorum eveniet facere, incidunt laudantium nulla quia, quod repellendus ut vero? A facilis numquam rem ut voluptatum.',
-            details: [['key', 'value'], ['key1', 'value1'], ['key2', 'value2'], ['key3', 'value3']]
+            details: [{label:'key', value:'value'}, {label:'key1', value:'value1'}, {label:'key2', value:'value2'}, {label:'key3', value:'value3'}]
 
         },
     ]);
