@@ -1,13 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {useRouter} from "next/router";
 import Layout from "../components/Layout";
 import Head from "next/head";
 import BreadcrumbNew from "../components/common/BreadcrumbNew";
-import * as PropTypes from "prop-types";
 import Product from "../components/abstract/Product";
 import useLatestProducts from "../hooks/common/useLatestProducts";
-import productDetail from "../components/abstract/Product";
-import {Loading} from "@nextui-org/react";
 
 const AbstractProductDetail = () => {
     const {getProductBySlug} = useLatestProducts()
