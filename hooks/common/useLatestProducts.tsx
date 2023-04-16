@@ -109,7 +109,8 @@ const useLatestProducts = () => {
             ]
         },
     ]);
-    const getProductBySlug = (slug: string) => {
+    const getProductBySlug = (slug: string | string[] | undefined): TProduct | undefined => {
+        if (Array.isArray(slug) || slug === undefined) return undefined
         return latestProducts.find(product => product.slug === slug)
     }
     return {latestProducts, getProductBySlug}

@@ -14,7 +14,7 @@ const AbstractProductDetail = () => {
     const router = useRouter()
     const {abstractId} = router.query
     const product = getProductBySlug(abstractId)
-    if(product === undefined) return <h1>Product not found!</h1>
+    if (product === undefined) return <h1>Product not found!</h1>
     return (
         <Layout>
             <Head><title>{product?.title}</title></Head>

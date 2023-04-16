@@ -8,4 +8,4 @@ export type TProduct = {
     price: string
 }
 export type TWrapper = { id: string, classes: string }
-export type TSlide={id:string, url:string}
+export type TSlide = { id: string, url: string }
