@@ -12,7 +12,14 @@ const ProductDescription = ({wrapper: {id, classes}, product}) => {
 const ProductDetail = ({wrapper: {id, classes}, product}) => {
     return <div className={classes} id={id}>
         <h3 className={`text-md font-extralight`}>Detail</h3>
-        <p>{product?.detail}</p>
+        <div className={`flex flex-col `}>
+            { Array.isArray(product.details) && [...product.details].slice(0, 5).map((detail, index) =>
+                <div key={index} className={`flex justify-start w-full`}>
+                    <div className={`border border-black basis-1/2 p-2`}>key</div>
+                    <div className={`border border-black basis-1/2 p-2`}>value</div>
+                </div>
+            )}
+        </div>
     </div>
 }
 const Product = ({product}) => {

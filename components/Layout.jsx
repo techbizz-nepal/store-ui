@@ -25,11 +25,6 @@ function Layout({children}) {
             <SideBar departments={departmentsArray}/>
             <ToastContainer
                 position="top-right"
-                autoClose="5000"
-                hideProgressBar="false"
-                closeOnClick="true"
-                pauseOnHover="true"
-                progress="undefined"
                 theme="dark"
                 limit={3}
             />
