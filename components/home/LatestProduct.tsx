@@ -1,8 +1,9 @@
 import {Card, Grid, Row, Text} from "@nextui-org/react";
 import React from "react";
 import {useRouter} from "next/router";
+import {ILatestProductProps} from "../../TS/interfaces";
 
-const LatestProduct = ({latestProducts, title, wrapperClass}) => {
+const LatestProduct = ({latestProducts, title, wrapperClass}: ILatestProductProps) => {
     const router = useRouter()
     return (
         <div className={`${wrapperClass} px-4 flex flex-col`}>

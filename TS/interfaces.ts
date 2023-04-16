@@ -1,6 +1,8 @@
 import {Dispatch, HTMLAttributes, SetStateAction} from "react";
-import {TProduct, TWrapper} from "./types";
+import {TProduct, TSlide, TWrapper} from "./types";
+import exp from "constants";
 
+/********************* Abstract page interfaces *******************************/
 export interface IProductDetailProps extends HTMLAttributes<HTMLElement> {
     title: string,
     wrapper: TWrapper
@@ -37,3 +39,22 @@ export interface IDetail {
     label: string,
     value: string
 }
+
+/***************************************************/
+
+/********************** Common Interfaces *****************************/
+export interface ILatestProductProps {
+    latestProducts: TProduct[],
+    title: string,
+    wrapperClass: string
+}
+export interface IHeroSliderProps {
+    index: number,
+    onNextSlideClick: () => void,
+    onPrevSlideClick: () => void,
+    onGotoSlideClick: (index:number) => void,
+    slides: TSlide[]
+}
+
+/***************************************************/
+

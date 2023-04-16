@@ -1,8 +1,9 @@
 import {BsChevronCompactLeft, BsChevronCompactRight} from "react-icons/bs";
 import {RxDotFilled} from "react-icons/rx";
 import React from "react";
+import {IHeroSliderProps} from "../../TS/interfaces";
 
-const HeroSlider = ({index, onNextSlideClick, onPrevSlideClick, onGotoSlideClick, slides}) => {
+const HeroSlider = ({index, onNextSlideClick, onPrevSlideClick, onGotoSlideClick, slides}: IHeroSliderProps) => {
     return (
         <div className={`max-w-[1400px] h-[780px] w-full m-auto py-16 px-4 relative group`}>
             <div style={{backgroundImage: `url(${slides[index].url})`}}
@@ -24,8 +25,11 @@ const HeroSlider = ({index, onNextSlideClick, onPrevSlideClick, onGotoSlideClick
             <div className={`flex top-4 justify-center py-2`}>
                 {
                     slides.map((slide, slideIndex) => (
-                        <div key={slide.id} onClick={() => onGotoSlideClick(slideIndex)}
-                             className={`text-2xl cursor-pointer`}><RxDotFilled/></div>
+                        <div key={slide.id}
+                             onClick={() => onGotoSlideClick(slideIndex)}
+                             className={`text-2xl cursor-pointer`}>
+                            <RxDotFilled/>
+                        </div>
                     ))
                 }
             </div>
