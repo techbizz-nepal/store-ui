@@ -1,6 +1,5 @@
 import {Dispatch, HTMLAttributes, SetStateAction} from "react";
 import {TProduct, TSlide, TWrapper} from "./types";
-import exp from "constants";
 
 /********************* Abstract page interfaces *******************************/
 export interface IProductDetailProps extends HTMLAttributes<HTMLElement> {
